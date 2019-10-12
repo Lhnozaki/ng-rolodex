@@ -14,6 +14,12 @@ app.use(bodyParser.json());
 //   });
 // });
 
+app.get("/", (req, res) => {
+  res.json({
+    success: true
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
