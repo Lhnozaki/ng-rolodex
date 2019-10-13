@@ -1,4 +1,5 @@
 const bookshelf = require("../bookshelf");
+
 require("./Contact");
 
 class User extends bookshelf.Model {
@@ -11,7 +12,7 @@ class User extends bookshelf.Model {
   }
 
   contacts() {
-    return this.hasMany("contacts", "created_by");
+    return this.hasMany("Contact", "created_by");
   }
 }
 
