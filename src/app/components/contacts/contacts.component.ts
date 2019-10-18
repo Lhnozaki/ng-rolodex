@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { BackendService } from "../../services/backend.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-contacts",
@@ -9,12 +10,20 @@ import { BackendService } from "../../services/backend.service";
 export class ContactsComponent implements OnInit {
   contacts;
 
-  constructor(private backend: BackendService) {}
+  modalCard;
+
+  showModal = false;
+
+  constructor(private backend: BackendService, private router: Router) {}
 
   ngOnInit() {
     this.backend.getContacts().then(data => {
-      console.log(data);
       this.contacts = data;
     });
+  }
+
+  getContact(data) {
+    const index = data;
+    this.router.navigate([`contacts/${index}`]);
   }
 }

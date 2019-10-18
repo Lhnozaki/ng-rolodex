@@ -5,6 +5,7 @@ import { LoginComponent } from "./components/login/login.component";
 import { LogoutComponent } from "./components/logout/logout.component";
 import { SearchComponent } from "./components/search/search.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
+import { CardComponent } from "./components/card/card.component";
 
 const routes: Routes = [
   {
@@ -14,6 +15,10 @@ const routes: Routes = [
   {
     path: "contacts",
     component: ContactsComponent
+  },
+  {
+    path: "contacts/:id",
+    component: CardComponent
   },
   {
     path: "login",

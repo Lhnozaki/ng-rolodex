@@ -19,6 +19,14 @@ app.get("/api/contacts", (req, res) => {
   });
 });
 
+app.get("/api/contacts/:id", (req, res) => {
+  return Contact.where({ id: req.params.id })
+    .fetchAll()
+    .then(results => {
+      res.status(200).json(results);
+    });
+});
+
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });

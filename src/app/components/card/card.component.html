@@ -1,3 +1,17 @@
-<p>
-  {{ contact.name }}
-</p>
+<div class="card-container">
+  <div *ngFor="let contact of contact" class="contact">
+    <div class="name">{{ contact.name }}</div>
+    <div>{{ contact.address }}</div>
+    <div>Email: {{ contact.email }}</div>
+    <div class="phones">
+      <div>Home: {{ contact.home }}</div>
+      <div>Mobile: {{ contact.mobile }}</div>
+      <div>Work: {{ contact.work }}</div>
+    </div>
+    <div class="social">
+      <div>Twitter: {{ contact.twitter }}</div>
+      <div>IG: {{ contact.instagram }}</div>
+      <div>Github: {{ contact.github }}</div>
+    </div>
+  </div>
+</div>
