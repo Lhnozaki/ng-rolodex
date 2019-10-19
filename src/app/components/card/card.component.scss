@@ -1,11 +1,22 @@
 .card-container {
   max-width: 70%;
-  margin: 100px auto;
+  margin: auto;
   min-height: 100vh;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
   background: rgb(252, 252, 252);
+  overflow: auto;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 70px;
+}
+
+.ut-button {
+  width: 300px;
+  min-height: 600px;
+  border: none;
+  background: rgb(252, 252, 252);
+  font-size: 3rem;
+  color: grey;
+  cursor: pointer;
 }
 
 .contact {
@@ -13,18 +24,14 @@
   width: 600px;
   height: 600px;
   padding: 20px;
-  margin: 10px 10px 30px 10px;
   background-color: white;
   transition: 0.3s;
   .name {
-    font-size: 1.3rem;
+    font-size: 2rem;
     font-weight: 600;
     margin-bottom: 10px;
   }
   .social {
     margin-top: 20px;
-  }
-  &:hover {
-    border: 3px solid black;
   }
 }

@@ -1,4 +1,5 @@
 <div class="card-container">
+  <a routerLink="/contacts"><button class="ut-button"><</button></a>
   <div *ngFor="let contact of contact" class="contact">
     <div class="name">{{ contact.name }}</div>
     <div>{{ contact.address }}</div>
@@ -13,5 +14,10 @@
       <div>IG: {{ contact.instagram }}</div>
       <div>Github: {{ contact.github }}</div>
     </div>
+    <div class="function-buttons">
+      <a routerLink="/contacts"><button>Edit</button></a>
+      <a routerLink="/contacts"><button>Delete</button></a>
+    </div>
   </div>
+  <a routerLink="/contacts"><button class="ut-button">></button></a>
 </div>

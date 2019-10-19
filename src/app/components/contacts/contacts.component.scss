@@ -1,11 +1,27 @@
 .contact-container {
   max-width: 70%;
-  margin: 100px auto;
+  margin: auto;
   min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   background: rgb(252, 252, 252);
+}
+
+.utility-buttons {
+  margin: auto;
+  max-width: 400px;
+  padding: 30px;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  color: black;
+  a {
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+  }
 }
 
 .contacts {
@@ -15,7 +31,9 @@
   padding: 20px;
   margin: 10px 10px 30px 10px;
   background-color: white;
+  border: none;
   transition: 0.3s;
+  cursor: pointer;
   .name {
     font-size: 1.3rem;
     font-weight: 600;
@@ -23,8 +41,5 @@
   }
   .social {
     margin-top: 20px;
-  }
-  &:hover {
-    border: 3px solid black;
   }
 }

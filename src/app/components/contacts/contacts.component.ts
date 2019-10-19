@@ -10,10 +10,6 @@ import { Router } from "@angular/router";
 export class ContactsComponent implements OnInit {
   contacts;
 
-  modalCard;
-
-  showModal = false;
-
   constructor(private backend: BackendService, private router: Router) {}
 
   ngOnInit() {
