@@ -21,9 +21,21 @@ export class AddComponent implements OnInit {
 
   justAdded;
 
+  isShow = false;
+
+  nameValid = false;
+
   constructor(private backend: BackendService) {}
 
   ngOnInit() {}
+
+  validateName = () => {
+    if (!this.formData.name) {
+      this.nameValid = false;
+    } else {
+      this.nameValid = true;
+    }
+  };
 
   onSubmit = () => {
     let newContact = { ...this.formData, created_by: 1 };
@@ -32,10 +44,7 @@ export class AddComponent implements OnInit {
     });
   };
 
-  isShow = false;
-
   toggleDisplay() {
     this.isShow = !this.isShow;
-    console.log(this.isShow);
   }
 }

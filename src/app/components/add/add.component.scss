@@ -27,9 +27,9 @@
   .sub-btn {
     margin-top: 20px;
     color: white;
-    background: cornflowerblue;
-    &:hover {
-      background: darken(cornflowerblue, 25%);
+    background: darken(cornflowerblue, 25%);
+    &:disabled {
+      background-color: cornflowerblue;
     }
   }
 }
@@ -42,12 +42,29 @@
   top: 0;
   display: grid;
   place-items: center;
+  text-align: center;
+  h2 {
+    text-transform: uppercase;
+    padding-top: 30px;
+  }
+  h1 {
+    font-size: 3rem;
+    color: green;
+  }
+  button {
+    font-size: 3rem;
+    border: none;
+    cursor: pointer;
+    margin-top: 100px;
+    color: white;
+    background: transparent;
+  }
 }
 
 .modal-content {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   width: 600px;
-  height: 600px;
+  height: 300px;
   padding: 20px;
   background-color: white;
   transition: 0.3s;

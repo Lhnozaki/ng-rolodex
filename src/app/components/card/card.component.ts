@@ -10,6 +10,8 @@ import { Router, ActivatedRoute } from "@angular/router";
 export class CardComponent implements OnInit {
   contact;
 
+  contactID = this.route.snapshot.paramMap.get("id");
+
   constructor(
     private backend: BackendService,
     private router: Router,
@@ -17,9 +19,14 @@ export class CardComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    let id = this.route.snapshot.paramMap.get("id");
-    this.backend.getContact(id).then(data => {
+    this.backend.getContact(this.contactID).then(data => {
       this.contact = data;
+    });
+  }
+
+  delete() {
+    this.backend.deleteContact(this.contactID).then(data => {
+      this.router.navigate(["contacts"]);
     });
   }
 }

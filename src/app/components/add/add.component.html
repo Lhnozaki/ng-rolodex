@@ -3,7 +3,12 @@
 
   <form class="add-form">
     <label for="name">name:</label>
-    <input type="text" name="name" [(ngModel)]="formData.name" />
+    <input
+      type="text"
+      name="name"
+      [(ngModel)]="formData.name"
+      (keyup)="validateName()"
+    />
 
     <label for="address">address:</label>
     <input type="text" name="address" [(ngModel)]="formData.address" />
@@ -29,21 +34,24 @@
     <label for="github">github:</label>
     <input type="text" name="github" [(ngModel)]="formData.github" />
 
-    <input class="sub-btn" type="submit" value="submit" (click)="onSubmit()" />
+    <input
+      class="sub-btn"
+      type="submit"
+      value="submit"
+      (click)="onSubmit()"
+      [disabled]="!nameValid"
+      (click)="toggleDisplay()"
+    />
   </form>
+</div>
 
-  <button (click)="toggleDisplay()">button</button>
+<div class="Modal" *ngIf="isShow">
+  <div class="modal-content">
+    <h2>
+      Sucessfully added:
+    </h2>
+    <h1>{{ formData.name }}</h1>
 
-  <div class="Modal" *ngIf="isShow">
-    <div class="modal-content">
-      <h1>My Modal</h1>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus, rem
-        temporibus aspernatur atque fugit dolorem sequi animi fugiat impedit
-        itaque quasi velit voluptatum doloremque amet, aliquid exercitationem
-        optio quam molestiae?
-      </p>
-      <button (click)="toggleDisplay()">button</button>
-    </div>
+    <button (click)="toggleDisplay()">X</button>
   </div>
 </div>

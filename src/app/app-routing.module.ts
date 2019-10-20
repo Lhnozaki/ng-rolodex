@@ -38,7 +38,7 @@ const routes: Routes = [
     component: NotFoundComponent
   },
   {
-    path: "add",
+    path: "new",
     component: AddComponent
   },
   {

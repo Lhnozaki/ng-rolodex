@@ -13,6 +13,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.unsubscribe(decorator);
 
+app.delete("/api/contacts/:id", (req, res) => {
+  return Contact.where({ id: req.params.id })
+    .destroy()
+    .then(results => {
+      res.status(200).json({ success: true });
+    });
+});
+
 app.post("/api/contacts", (req, res) => {
   const newContact = {
     name: req.body.name,

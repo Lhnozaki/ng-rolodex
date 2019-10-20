@@ -18,4 +18,8 @@ export class BackendService {
   addContact(data) {
     return this.http.post("/api/contacts", data).toPromise();
   }
+
+  deleteContact(data) {
+    return this.http.delete(`/api/contacts/${data}`).toPromise();
+  }
 }
