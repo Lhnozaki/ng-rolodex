@@ -14,4 +14,8 @@ export class BackendService {
   getContact(id) {
     return this.http.get(`/api/contacts/${id}`).toPromise();
   }
+
+  addContact(data) {
+    return this.http.post("/api/contacts", data).toPromise();
+  }
 }

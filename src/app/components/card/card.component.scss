@@ -1,5 +1,5 @@
 .card-container {
-  max-width: 70%;
+  max-width: 80%;
   margin: auto;
   min-height: 100vh;
   background: rgb(252, 252, 252);
@@ -10,7 +10,7 @@
 }
 
 .ut-button {
-  width: 300px;
+  width: 200px;
   min-height: 600px;
   border: none;
   background: rgb(252, 252, 252);
@@ -26,6 +26,7 @@
   padding: 20px;
   background-color: white;
   transition: 0.3s;
+  border-radius: 7px;
   .name {
     font-size: 2rem;
     font-weight: 600;

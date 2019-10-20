@@ -6,6 +6,7 @@ import { LogoutComponent } from "./components/logout/logout.component";
 import { SearchComponent } from "./components/search/search.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { CardComponent } from "./components/card/card.component";
+import { AddComponent } from "./components/add/add.component";
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: "404",
     component: NotFoundComponent
+  },
+  {
+    path: "add",
+    component: AddComponent
   },
   {
     path: "**",

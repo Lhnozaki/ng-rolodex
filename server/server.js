@@ -13,6 +13,25 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.unsubscribe(decorator);
 
+app.post("/api/contacts", (req, res) => {
+  const newContact = {
+    name: req.body.name,
+    address: req.body.address,
+    email: req.body.email,
+    home: req.body.home,
+    mobile: req.body.mobile,
+    work: req.body.work,
+    twitter: req.body.twitter,
+    instagram: req.body.instagram,
+    github: req.body.github,
+    created_by: req.body.created_by
+  };
+
+  return new Contact(newContact).save().then(results => {
+    res.status(200).json(results);
+  });
+});
+
 app.get("/api/contacts", (req, res) => {
   return Contact.fetchAll().then(results => {
     res.status(200).json(results);

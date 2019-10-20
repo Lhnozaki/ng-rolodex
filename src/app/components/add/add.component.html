@@ -1,0 +1,49 @@
+<div class="add-container">
+  <h2>Add new contact</h2>
+
+  <form class="add-form">
+    <label for="name">name:</label>
+    <input type="text" name="name" [(ngModel)]="formData.name" />
+
+    <label for="address">address:</label>
+    <input type="text" name="address" [(ngModel)]="formData.address" />
+
+    <label for="email">email:</label>
+    <input type="text" name="email" [(ngModel)]="formData.email" />
+
+    <label for="home">home:</label>
+    <input type="number" name="home" [(ngModel)]="formData.home" />
+
+    <label for="mobile">mobile:</label>
+    <input type="number" name="mobile" [(ngModel)]="formData.mobile" />
+
+    <label for="work">work:</label>
+    <input type="number" name="work" [(ngModel)]="formData.work" />
+
+    <label for="twitter">twitter:</label>
+    <input type="text" name="twitter" [(ngModel)]="formData.twitter" />
+
+    <label for="instagram">instagram:</label>
+    <input type="text" name="instagram" [(ngModel)]="formData.instagram" />
+
+    <label for="github">github:</label>
+    <input type="text" name="github" [(ngModel)]="formData.github" />
+
+    <input class="sub-btn" type="submit" value="submit" (click)="onSubmit()" />
+  </form>
+
+  <button (click)="toggleDisplay()">button</button>
+
+  <div class="Modal" *ngIf="isShow">
+    <div class="modal-content">
+      <h1>My Modal</h1>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus, rem
+        temporibus aspernatur atque fugit dolorem sequi animi fugiat impedit
+        itaque quasi velit voluptatum doloremque amet, aliquid exercitationem
+        optio quam molestiae?
+      </p>
+      <button (click)="toggleDisplay()">button</button>
+    </div>
+  </div>
+</div>
