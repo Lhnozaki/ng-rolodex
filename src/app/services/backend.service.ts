@@ -19,7 +19,11 @@ export class BackendService {
     return this.http.post("/api/contacts", data).toPromise();
   }
 
-  deleteContact(data) {
-    return this.http.delete(`/api/contacts/${data}`).toPromise();
+  editContact(id, data) {
+    return this.http.put(`/api/contacts/${id}`, data).toPromise();
+  }
+
+  deleteContact(id) {
+    return this.http.delete(`/api/contacts/${id}`).toPromise();
   }
 }

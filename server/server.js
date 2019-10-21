@@ -13,6 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.unsubscribe(decorator);
 
+//Routes
 app.delete("/api/contacts/:id", (req, res) => {
   return Contact.where({ id: req.params.id })
     .destroy()
@@ -21,19 +22,22 @@ app.delete("/api/contacts/:id", (req, res) => {
     });
 });
 
+app.put("/api/contacts/:id", (req, res) => {
+  return Contact.where({ id: req.params.id })
+    .fetch()
+    .then(results => {
+      return new Contact({ id: req.params.id })
+        .save(req.body, {
+          patch: false
+        })
+        .then(results => {
+          res.status(200).json(results);
+        });
+    });
+});
+
 app.post("/api/contacts", (req, res) => {
-  const newContact = {
-    name: req.body.name,
-    address: req.body.address,
-    email: req.body.email,
-    home: req.body.home,
-    mobile: req.body.mobile,
-    work: req.body.work,
-    twitter: req.body.twitter,
-    instagram: req.body.instagram,
-    github: req.body.github,
-    created_by: req.body.created_by
-  };
+  const newContact = req.body;
 
   return new Contact(newContact).save().then(results => {
     res.status(200).json(results);

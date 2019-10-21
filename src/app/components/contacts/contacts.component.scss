@@ -11,16 +11,14 @@
 .utility-buttons {
   margin: auto;
   max-width: 400px;
-  padding: 30px;
-  font-size: 1.5rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   text-transform: uppercase;
-  color: black;
+  color: grey;
   a {
     text-decoration: none;
-    color: black;
     font-weight: bolder;
+    color: darken(cornflowerblue, 25%);
   }
 }
 
@@ -43,4 +41,9 @@
   .social {
     margin-top: 20px;
   }
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
 }

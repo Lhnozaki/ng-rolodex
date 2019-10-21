@@ -9,8 +9,20 @@ import { Router, ActivatedRoute } from "@angular/router";
 })
 export class CardComponent implements OnInit {
   contact;
-
   contactID = this.route.snapshot.paramMap.get("id");
+  isShow = false;
+  formData = {
+    name: "",
+    address: "",
+    email: "",
+    home: "",
+    mobile: "",
+    work: "",
+    twitter: "",
+    instagram: "",
+    github: ""
+  };
+  nameValid = false;
 
   constructor(
     private backend: BackendService,
@@ -24,9 +36,27 @@ export class CardComponent implements OnInit {
     });
   }
 
+  edit() {
+    this.backend.editContact(this.contactID, this.formData).then(data => {
+      this.contact = [data];
+    });
+  }
+
   delete() {
     this.backend.deleteContact(this.contactID).then(data => {
       this.router.navigate(["contacts"]);
     });
   }
+
+  toggleDisplay() {
+    this.isShow = !this.isShow;
+  }
+
+  validateName = () => {
+    if (!this.formData.name) {
+      this.nameValid = false;
+    } else {
+      this.nameValid = true;
+    }
+  };
 }

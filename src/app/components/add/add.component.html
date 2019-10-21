@@ -36,7 +36,7 @@
 
     <input
       class="sub-btn"
-      type="submit"
+      type="button"
       value="submit"
       (click)="onSubmit()"
       [disabled]="!nameValid"
@@ -51,7 +51,8 @@
       Sucessfully added:
     </h2>
     <h1>{{ formData.name }}</h1>
-
-    <button (click)="toggleDisplay()">X</button>
+    <a routerLink="/contacts">
+      <button (click)="toggleDisplay()">X</button>
+    </a>
   </div>
 </div>

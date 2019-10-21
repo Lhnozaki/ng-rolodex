@@ -15,9 +15,101 @@
       <div>Github: {{ contact.github }}</div>
     </div>
     <div class="function-buttons">
-      <a routerLink="/contacts"><button>Edit</button></a>
+      <button (click)="toggleDisplay()">Edit</button>
       <button (click)="delete()">Delete</button>
     </div>
   </div>
   <a routerLink="/contacts"><button class="ut-button">></button></a>
+</div>
+
+<div class="Modal" *ngIf="isShow">
+  <div class="modal-content">
+    <form class="edit-form" *ngFor="let contact of contact">
+      <h2>
+        Edit Contact information
+      </h2>
+      <label for="name">name:</label>
+      <input
+        type="text"
+        name="name"
+        [(ngModel)]="formData.name"
+        (keyup)="validateName()"
+        placeholder="{{ contact.name }}"
+      />
+
+      <label for="address">address:</label>
+      <input
+        type="text"
+        name="address"
+        [(ngModel)]="formData.address"
+        placeholder="{{ contact.address }}"
+      />
+
+      <label for="email">email:</label>
+      <input
+        type="text"
+        name="email"
+        [(ngModel)]="formData.email"
+        placeholder="{{ contact.email }}"
+      />
+
+      <label for="home">home:</label>
+      <input
+        type="number"
+        name="home"
+        [(ngModel)]="formData.home"
+        placeholder="{{ contact.home }}"
+      />
+
+      <label for="mobile">mobile:</label>
+      <input
+        type="number"
+        name="mobile"
+        [(ngModel)]="formData.mobile"
+        placeholder="{{ contact.mobile }}"
+      />
+
+      <label for="work">work:</label>
+      <input
+        type="number"
+        name="work"
+        [(ngModel)]="formData.work"
+        placeholder="{{ contact.work }}"
+      />
+
+      <label for="twitter">twitter:</label>
+      <input
+        type="text"
+        name="twitter"
+        [(ngModel)]="formData.twitter"
+        placeholder="{{ contact.twitter }}"
+      />
+
+      <label for="instagram">instagram:</label>
+      <input
+        type="text"
+        name="instagram"
+        [(ngModel)]="formData.instagram"
+        placeholder="{{ contact.instagram }}"
+      />
+
+      <label for="github">github:</label>
+      <input
+        type="text"
+        name="github"
+        [(ngModel)]="formData.github"
+        placeholder="{{ contact.github }}"
+      />
+
+      <input
+        class="edit-btn"
+        type="button"
+        value="submit"
+        [disabled]="!nameValid"
+        (click)="edit()"
+        (click)="toggleDisplay()"
+      />
+    </form>
+    <button class="close" (click)="toggleDisplay()">X</button>
+  </div>
 </div>
